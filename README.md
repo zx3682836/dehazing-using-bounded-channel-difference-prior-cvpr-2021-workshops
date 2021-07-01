@@ -1,7 +1,7 @@
 # CVPRW2021-dehazing
 
-Dehazing results of my paper "Single Image Dehazing Using Bounded Channel Difference Prior".
-
+Dehazing results of my paper "Single Image Dehazing Using Bounded Channel Difference Prior". 
+Output files can be found in the "Fattal-Synthetic-Images" and "Real-Images" folders.
 ```
 @InProceedings{Zhao_2021_CVPR,
     author    = {Zhao, Xuan},
