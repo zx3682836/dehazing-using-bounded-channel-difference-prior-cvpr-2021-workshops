@@ -7,10 +7,8 @@ clear all;
 % Single Image Dehazing Using Bounded Channel Difference Prior. Xuan Zhao, CVPR2021 workshops,
 % If you use this code, please cite our paper.
 % 
-% Author: Xuan Zhao, 20214. 
+% Author: Xuan Zhao, 2021. 
 % 
-% The software code of the Non-Local Image Dehazing algorithm is provided
-% under the attached LICENSE.md
 
 
 %% get input image
