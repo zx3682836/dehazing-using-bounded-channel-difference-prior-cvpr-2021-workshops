@@ -150,7 +150,7 @@ boundingB = 1 - img(:,:,3)./A_img(:,:,3);
 bounding = max(max(boundingR,boundingG),boundingB);
 
 
-trans = Matting(trans,img,A_global,patch_size);
+trans = interp(trans,img,A_global,patch_size);
 trans = guidedfilter(rgb2gray(img), trans, 20, 0.1);
 
 % out = wls_optimization(trans*255, (1 - trans)*255, (img)*255, 0.05 )/255;
