@@ -147,6 +147,7 @@ for i = floor(patch_size/2) + 1:floor(patch_size/2)*2 + 1:rows
         patch_size3 = 9 - min(exp(std(patch(:))*3)*10,6);
         end
         
+        patch_size3 = floor(patch_size3);
         up = max(1,i - patch_size3);
         down = min(rows,i + patch_size3);
         left = max(1,j - patch_size3);
