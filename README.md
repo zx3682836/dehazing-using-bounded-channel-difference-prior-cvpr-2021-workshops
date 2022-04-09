@@ -4,7 +4,7 @@ Code and dehazing results of my paper "Single Image Dehazing Using Bounded Chann
 Output files can be found in the "Fattal-Synthetic-Images" and "Real-Images" folders.
 
 ![Dehazing Example-Input](https://github.com/zx3682836/CVPRW-dehazing/blob/main/image/real-052.png)
-![Dehazing Example-Input](https://github.com/zx3682836/CVPRW-dehazing/blob/main/Radiance.png)
+![Dehazing Example-output](https://github.com/zx3682836/CVPRW-dehazing/blob/main/Radiance.png)
 
 ```
 @InProceedings{Zhao_2021_CVPR,
