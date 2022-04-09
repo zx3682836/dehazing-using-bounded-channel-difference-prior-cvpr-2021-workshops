@@ -1,7 +1,9 @@
 # CVPRW2021-dehazing
 
 Code and dehazing results of my paper "Single Image Dehazing Using Bounded Channel Difference Prior". 
+
 The algorithm is further optimized on SOTS dataset, and some results may be different from those in the paper.
+
 Run 'main.m' for single image dehazing examples.
 Run 'evaluate_new.m' for evaluation on SOTS dataset.
 
