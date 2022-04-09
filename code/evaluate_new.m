@@ -2,23 +2,23 @@
 path = 'E:\Dehazing\SOTS\outdoor';
 % path = 'E:\Dehazing\HSTS\synthetic';
 
-% imgDir = dir([path '\synthetic\*.jpg']); % ±éÀúËùÓĞjpg¸ñÊ½ÎÄ¼ş
-% imgDir = dir([path '\hazy\*.png']); % ±éÀúËùÓĞjpg¸ñÊ½ÎÄ¼ş png jpg
-imgDir = dir([path '\hazy\*.jpg']); % ±éÀúËùÓĞjpg¸ñÊ½ÎÄ¼ş png jpg
+% imgDir = dir([path '\synthetic\*.jpg']); % éå†æ‰€æœ‰jpgæ ¼å¼æ–‡ä»¶
+% imgDir = dir([path '\hazy\*.png']); % éå†æ‰€æœ‰jpgæ ¼å¼æ–‡ä»¶ png jpg
+imgDir = dir([path '\hazy\*.jpg']); % éå†æ‰€æœ‰jpgæ ¼å¼æ–‡ä»¶ png jpg
 psnr_list = zeros(1,500);
 % psnr_sum =  21.1635*35;
 psnr_sum =  0;
 index = 160;
-for i = index + 1:length(imgDir) % ±éÀú½á¹¹Ìå¾Í¿ÉÒÔÒ»Ò»´¦ÀíÍ¼Æ¬ÁË
+for i = index + 1:length(imgDir) % éå†ç»“æ„ä½“å°±å¯ä»¥ä¸€ä¸€å¤„ç†å›¾ç‰‡äº†
     if i <= index
         continue
     end
-    img = imread([path '\hazy\' imgDir(i).name]); %¶ÁÈ¡Ã¿ÕÅÍ¼Æ¬ synthetic hazy
+    img = imread([path '\hazy\' imgDir(i).name]); %è¯»å–æ¯å¼ å›¾ç‰‡ synthetic hazy
 %     img = imresize([140,140]);
-    result = im2double(IIDCP(img));
+    result = im2double(eval_func(img));
     
     gt_name = [imgDir(i).name(1:4) '.png']; % png
-    gt = im2double(imread([path '\gt\' gt_name])); %¶ÁÈ¡Ã¿ÕÅÍ¼Æ¬ original gt
+    gt = im2double(imread([path '\gt\' gt_name])); %è¯»å–æ¯å¼ å›¾ç‰‡ original gt
     
 %     gt = gt(11:470,11:630,:);
     
