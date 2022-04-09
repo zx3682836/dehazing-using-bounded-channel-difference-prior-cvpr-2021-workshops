@@ -13,7 +13,7 @@ img_gri = im2double(imread('./image/real-052.png'));
 % img_gri = im2double(imread('./test/4.png'));
 % img_gri = im2double(imread('./HQ/10.jpg'));
 % img_gri = im2double(imread('./Challenge/2.jpg'));
-% img_gri = im2double(imread('./È¥Îí´¦ÀíÔ­Ê¼Í¼Ïñ/seafog5.png')); %YST_Bing_667
+% img_gri = im2double(imread('./å»é›¾å¤„ç†åŸå§‹å›¾åƒ/seafog5.png')); %YST_Bing_667
 
 % D:\Matlab\Dehazing\Analize_3\test
 
@@ -61,25 +61,25 @@ A_global = get_atmosphere(img2, dark_channel) +0.0;
 % [R,G,B] = extimate_airlight(img,patch_size,patch_size2);
 % A_global = [R,G,B] ;
 
-% A_global = [0.94, 0.97, 0.986]; % 32 ¡Ì 2.5
+% A_global = [0.94, 0.97, 0.986]; % 32 âˆš 2.5
 % A_global = [0.65, 0.7, 0.71]; % 33 1.5
 % A_global = [0.9, 0.97, 0.988]; % 34 
-% A_global = [ 0.755, 0.77, 0.77]; % 35 ¡Ì
-% A_global = [0.67, 0.67, 0.66]; % 36 ¡Ì
-% A_global = [0.76 ,0.724 ,0.62]; % 37 ¡Ì
-% A_global = [0.81, 0.81, 0.82]; % 38 ¡Ì
-% A_global = [0.8, 0.8, 0.816]; % 30 ¡Ì ÔöÇ¿
-% A_global = [0.46 ,0.57 ,0.8]; % 44 ¡Ì 
-% A_global = [0.77 ,0.77 ,0.75]; % 45 ¡Ì ÔöÇ¿
+% A_global = [ 0.755, 0.77, 0.77]; % 35 âˆš
+% A_global = [0.67, 0.67, 0.66]; % 36 âˆš
+% A_global = [0.76 ,0.724 ,0.62]; % 37 âˆš
+% A_global = [0.81, 0.81, 0.82]; % 38 âˆš
+% A_global = [0.8, 0.8, 0.816]; % 30 âˆš å¢å¼º
+% A_global = [0.46 ,0.57 ,0.8]; % 44 âˆš 
+% A_global = [0.77 ,0.77 ,0.75]; % 45 âˆš å¢å¼º
 % A_global = [0.95, 1.01, 1.05]; % 46
 % A_global = [0.73, 0.8, 0.92]; % 51
-A_global = [0.617, 0.73, 0.883]; % 52 ¡Ì 
-% A_global = [0.666, 0.936 ,1.08]; % 57¡Ì
-% A_global = [ 0.575, 0.6125 ,0.7]; % 58 ¡Ì
+A_global = [0.617, 0.73, 0.883]; % 52 âˆš 
+% A_global = [0.666, 0.936 ,1.08]; % 57âˆš
+% A_global = [ 0.575, 0.6125 ,0.7]; % 58 âˆš
 % A_global = [0.67 ,0.72 ,0.825]; % 57
 % A_global = [0.67 ,0.72 ,0.825]; % 50
-% A_global = [1.14, 1.24, 1.32]; % 39 ¡Ì
-% A_global = [0.72 ,0.785 ,0.81]; % 43 ¡Ì
+% A_global = [1.14, 1.24, 1.32]; % 39 âˆš
+% A_global = [0.72 ,0.785 ,0.81]; % 43 âˆš
 % A_global = [0.14 ,0.53, 0.83]; % night
 % A_global = [0.63, 0.66, 0.71]; % 54
 % A_global = [0.549, 0.75, 0.985]; % 51
@@ -190,7 +190,7 @@ boundingG = 1 - img(:,:,2)./A_img(:,:,2);
 boundingB = 1 - img(:,:,3)./A_img(:,:,3);
 bounding = max(max(boundingR,boundingG),boundingB);
 
-trans = Matting(trans,img,A_global,patch_size);
+trans = interp(trans,img,A_global,patch_size);
 trans = guidedfilter(rgb2gray(img), trans, patch_size - 5, 0.1);
 
 % out = wls_optimization(trans*255, (1 - trans)*255, (img)*255, 0.05 )/255;
