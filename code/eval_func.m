@@ -1,4 +1,4 @@
-function Radiance = exal_func(img)
+function Radiance = eval_func(img)
 
 img = im2double(img);
 img = min(max(img,0.00001),0.99999);
