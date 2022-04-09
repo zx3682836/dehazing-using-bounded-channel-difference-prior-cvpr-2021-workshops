@@ -1,4 +1,4 @@
-function output = Matting(trans, img, A, patch_size)
+function output = interp(trans, img, A, patch_size)
 
 % color_variation_map = abs((img(:,:,1)-img(:,:,2))) + ...
 % abs((img(:,:,1)-img(:,:,3))) + ...
@@ -30,8 +30,8 @@ for i = 1:rows
 %         continue
 %     end
     
-    %Çó³öÖÜÎ§ÓĞÍ¸ÉäÂÊµÄÏñËØµãµÄ×ø±ê
-    %ËÑË÷°ë¾¶Îª30
+    %æ±‚å‡ºå‘¨å›´æœ‰é€å°„ç‡çš„åƒç´ ç‚¹çš„åæ ‡
+    %æœç´¢åŠå¾„ä¸º30
 %     up = max(1,i-30);
 %     down = min(rows,i+30);
 %     left = max(1, j-30
@@ -63,8 +63,8 @@ for i = 1:rows
         end
     end
 %     list
-    %¸ù¾İ×ø±ê ºÍboundingÍ¼£¬Çó³öÏàÓ¦µÄÏñËØ¼ÓÈ¨
-    %Ë«±ßÉÏ²ÉÑù
+    %æ ¹æ®åæ ‡ å’Œboundingå›¾ï¼Œæ±‚å‡ºç›¸åº”çš„åƒç´ åŠ æƒ
+    %åŒè¾¹ä¸Šé‡‡æ ·
     value_sum = 0;
     weighting_sum = 0;
     center_value = bounding(i,j);
